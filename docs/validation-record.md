@@ -30,8 +30,10 @@ Local source/test/output receipts are retained privately with the publication pr
 Research data and generated evidence remain excluded from the public source. The README
 identifies historical performance separately from the current validation repeat.
 
-Remote CI: NOT RUN. No private staging repository, public repository, visibility change,
-release tag or release has been created. Those require the founder's explicit authorization.
+Remote CI: NOT RUN. The founder authorized private staging at
+`mqar96/BioG-Reliability` on 2026-10-20, and the empty private repository was created
+and its private visibility verified in GitHub. Source upload and CI are pending.
+Public visibility, release tags and releases still require separate explicit approval.
 
 The built source distribution was installed without dependency replacement, unpacked,
 and its own data-free tests executed: 69 passed, five research cases deselected.

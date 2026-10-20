@@ -187,8 +187,8 @@ Default reproduction and checks are data-free:
 
 Full Pytest explicitly skips research tests when external inputs are absent; CI
 deliberately deselects them. With prepared inputs, all retained research assertions run.
-See [validation record](docs/validation-record.md). Remote CI awaits private-staging
-authorization; no passing badge is asserted. See [contributing](CONTRIBUTING.md)
+See [validation record](docs/validation-record.md). Private staging is authorized at
+`mqar96/BioG-Reliability`; remote CI remains pending and no passing badge is asserted. See [contributing](CONTRIBUTING.md)
 and [security](SECURITY.md).
 
 ## References and citation
@@ -202,5 +202,5 @@ and [security](SECURITY.md).
 Use [CITATION.cff](CITATION.cff) and cite original data alongside the software.
 Original source and synthetic fixtures: [MIT](LICENSE). External data/dependencies
 retain their terms: [third-party notices](THIRD_PARTY_NOTICES.md).
-Version **0.1.0** is a local release candidate; publication/visibility/release actions
+Version **0.1.0** is a release candidate; public publication/visibility/release actions
 require explicit approval. See [draft release notes](RELEASE_NOTES.md).

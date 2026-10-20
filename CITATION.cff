@@ -6,7 +6,7 @@ type: software
 authors:
   - name: BIOGIANT THERAPEUTICS
 license: MIT
-repository-code: https://github.com/BioGiantTherapeutics/BioG-Reliability
+repository-code: https://github.com/mqar96/BioG-Reliability
 abstract: Research software for reproducible evaluation of precomputed CRISPR off-target scores.
 references:
   - type: article
