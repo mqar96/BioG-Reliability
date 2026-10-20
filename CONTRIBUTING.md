@@ -1,4 +1,5 @@
 # Contributing
+
 Use Python 3.13 and scripts/setup.ps1. Run scripts/verify.py --software-only before a
 source-only change. Run full Pytest and authorized research reconstruction when changing
 scientific contracts, metrics, identity or statistical assumptions. Record selection,

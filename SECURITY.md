@@ -1,4 +1,5 @@
 # Security and sensitive data
+
 This application is intended for localhost research evaluation. Authentication,
 multi-user isolation and hosted deployment are outside its validated scope.
 

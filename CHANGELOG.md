@@ -1,5 +1,7 @@
 # Changelog
+
 ## 0.1.0 — unreleased
+
 - Strict CSV/JSON provenance, coordinate and cohort contracts.
 - Coverage, classification, ranking, tie-budget and uncertainty analyses.
 - CLI and local dashboard with original synthetic demonstration and input hashes.

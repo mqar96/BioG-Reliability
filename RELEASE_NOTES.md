@@ -1,4 +1,5 @@
 # v0.1.0 — draft, not published
+
 BioG-Reliability evaluates existing CRISPR off-target prediction outputs. It combines
 strict validation, cohort/coverage auditing, classification and ranking metrics,
 exact-budget tie analysis, uncertainty, a CLI and a local Streamlit dashboard.

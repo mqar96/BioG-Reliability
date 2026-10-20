@@ -1,4 +1,5 @@
 # Worked synthetic software example
+
 Run scripts/setup.ps1, then:
     .venv\Scripts\python.exe -m biog_reliability.cli examples/demo/truth.csv examples/demo/predictions.csv examples/demo/provenance.json --output work/demo
 

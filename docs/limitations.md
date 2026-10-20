@@ -1,4 +1,5 @@
 # Scientific and operational limitations
+
 - Downstream deposited-score evaluation; no native inference, training or clinical validation.
 - 20/25 primary comparisons reproduce; five stored CCTop reference discrepancies persist.
 - TrueOT is externally sourced and filtered for known overlap, but complete model-training independence remains unverified.

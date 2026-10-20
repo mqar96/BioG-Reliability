@@ -1,4 +1,5 @@
 # Source-only release boundary
+
 Proposed repository: BioGiantTherapeutics/BioG-Reliability. The local candidate has a
 fresh Git root derived from a reviewed source ZIP, with no old parents, alternates,
 copied .git directory or remote. Never push the research repository history.
