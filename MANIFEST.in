@@ -1,2 +1,13 @@
+include README.md LICENSE THIRD_PARTY_NOTICES.md CITATION.cff CHANGELOG.md CONTRIBUTING.md SECURITY.md RELEASE_NOTES.md AGENTS.md app.py requirements.in requirements.lock .gitignore .gitattributes
 recursive-include tests *.py
-include THIRD_PARTY_NOTICES.md
+recursive-include scripts *.py *.ps1
+recursive-include docs *.md *.json *.jpg
+recursive-include examples/demo *.csv *.json
+prune data
+prune research
+prune results
+prune reports
+prune presentation
+prune work
+prune .venv
+global-exclude *.pyc *.log
