@@ -20,7 +20,7 @@ from biog_reliability.validation import (
 )
 
 ROOT = Path(__file__).resolve().parent
-st.set_page_config(page_title="BioG-Reliability", page_icon="🧬", layout="wide")
+st.set_page_config(page_title="BioG-Reliability", page_icon="ðŸ§¬", layout="wide")
 st.markdown(
     """<style>
 .stApp {background:#081624;color:#e9f3fa}
@@ -110,7 +110,7 @@ else:
         st.stop()
 
 st.title("BioG-Reliability")
-st.caption("CRISPR off-target benchmarking · evidence, coverage and reproducibility")
+st.caption("CRISPR off-target benchmarking Â· evidence, coverage and reproducibility")
 if mode == "Synthetic demonstration":
     st.warning(
         "SYNTHETIC SOFTWARE DEMONSTRATION: artificial labels and scores. "
@@ -118,7 +118,7 @@ if mode == "Synthetic demonstration":
     )
 if mode == "Public benchmark":
     st.caption(
-        "Kaufmann et al. 2026 · hg38 / human SpCas9 · length-23 cohort · 0.1% indel threshold"
+        "Kaufmann et al. 2026 Â· hg38 / human SpCas9 Â· length-23 cohort Â· 0.1% indel threshold"
     )
 models = st.sidebar.multiselect(
     "Models", sorted(predictions.model.unique()), default=sorted(predictions.model.unique())
@@ -130,7 +130,11 @@ predictions = predictions[predictions.model.isin(models)]
 metadata = {**metadata, "selected_models": list(models)}
 individual = compare_models(truth, predictions)
 common = compare_models(truth, predictions, common=True)
-recalls = summarize_recall(recall_at_k(truth, predictions))
+recalls = summarize_recall(
+    recall_at_k(truth, predictions, (1, 2, 3))
+    if mode == "Synthetic demonstration"
+    else recall_at_k(truth, predictions)
+)
 palette = ["#43dce4", "#7d9dff", "#f3bb66", "#df85c8", "#82dcb2"]
 
 
@@ -158,7 +162,11 @@ if page == "Overview":
     cols[3].metric("Models", len(models))
     left, right = st.columns([1.55, 1])
     with left:
-        st.subheader("Recovery across deposited rank cutoffs")
+        st.subheader(
+            "Recovery across artificial rank cutoffs"
+            if mode == "Synthetic demonstration"
+            else "Recovery across deposited rank cutoffs"
+        )
         plot(
             px.line(
                 recalls,
