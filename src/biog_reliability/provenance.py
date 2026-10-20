@@ -19,11 +19,26 @@ def source_snapshot(root):
 
 
 def run_context(root):
+    root = Path(root).resolve()
+    commit = None
+    try:
+        top = subprocess.check_output(
+            ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+        if Path(top).resolve() == root:
+            commit = subprocess.check_output(
+                ["git", "-C", str(root), "rev-parse", "HEAD"],
+                text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        # Source ZIPs have no Git metadata. Never inherit an unrelated parent checkout.
+        pass
     return {
         "timestamp_utc": datetime.now(UTC).isoformat(),
-        "git_commit": subprocess.check_output(
-            ["git", "-C", str(root), "rev-parse", "HEAD"], text=True
-        ).strip(),
+        "git_commit": commit,
         "source_sha256": source_snapshot(root),
         "python": platform.python_version(),
         "platform": platform.platform(),
