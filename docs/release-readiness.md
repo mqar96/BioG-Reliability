@@ -22,7 +22,8 @@ Original code/fixtures are MIT; dependencies and external data retain their term
 Nothing third-party is vendored. See THIRD_PARTY_NOTICES.md and dependency-licenses.json.
 
 Owner/source review and private staging creation/push were authorized and completed.
-The first hosted software CI run passed; inspect Actions for the current commit.
+Inspect Actions for the hosted run attached to the exact proposed release commit.
+The private approval preview records that commit and run together with asset hashes.
 The remaining publication gate is separate explicit approval for the exact public
 commit, assets, visibility change, tag and release. No public release or announcement
 is authorized by private staging approval. Research-data rights remain separate.

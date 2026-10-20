@@ -47,3 +47,26 @@ be publicly pushed without rights clearance; use the reviewed source-only export
 examples/demo and docs/assets/demo-dashboard.jpg are original synthetic software fixtures
 and an authentic screenshot of those fixtures. No biological sequences or observations
 are represented. They are distributed under the project MIT license.
+
+## MIT implications for BIOGIANT THERAPEUTICS
+
+The [MIT license text](https://opensource.org/license/mit) permits others, including
+commercial competitors, to use, copy, modify, distribute, sublicense and sell the
+original software. They must retain the copyright and permission notice in copies
+or substantial portions. MIT does not require recipients to publish their changes,
+pay royalties, obtain separate commercial permission or cite a paper as a license
+condition. CITATION.cff is an academic citation request, not an extra MIT restriction.
+
+BIOGIANT retains its copyright and may also offer commercial products, support or
+separate licensing for rights it controls. Releasing this version under MIT permits
+others to continue using their MIT-licensed copies under those terms. The license
+provides the software without warranty; it is not a clinical approval or performance
+guarantee. It does not transfer ownership of BIOGIANT branding or imply endorsement.
+The text contains no express patent clause; no separate patent clearance is asserted.
+
+MIT applies only to the original software and original synthetic assets covered by
+this project license. It grants no rights over excluded datasets, third-party code,
+publications or dependencies beyond their own terms. Source-only exclusion avoids
+claiming that MIT resolves those data rights. This review is limited to the stated
+release scope and does not establish rights to distribute future bundled installers
+or research records.

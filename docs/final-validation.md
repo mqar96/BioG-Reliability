@@ -1,51 +1,54 @@
-# Verified release validation
+# Final publication validation
 
-Two fresh Python 3.13.12 environments were created for the separate release repository
-and an unpacked source ZIP. The source ZIP contains no .git metadata or research data.
-Its provenance records a null commit rather than inheriting the parent research checkout.
+The current suite contains 75 tests. One source-export regression was added during
+staging; earlier 74/69 counts belong to superseded evidence and are not current totals.
 
-| Local scope | Passed | Failed/errors | Skipped | Deselected |
+| Executed scope | Passed | Failed/errors | Skipped | Deselected |
 |---|---:|---:|---:|---:|
-| Data-free CI selection | 69 | 0 | 0 | 5 |
-| Full suite without external inputs | 69 | 0 | 5 | 0 |
-| Full suite with freshly acquired research inputs | 74 | 0 | 0 | 0 |
+| Full local suite with separately prepared research inputs | 75 | 0 | 0 | 0 |
+| Source archive, data-free selection | 70 | 0 | 0 | 5 |
+| Source archive, full suite without research inputs | 70 | 0 | 5 | 0 |
+| Installed and unpacked source distribution, data-free selection | 70 | 0 | 0 | 5 |
+| Hosted Windows software CI selection | 70 | 0 | 0 | 5 |
 
-The final full research suite passed all 74 cases. Package statement coverage was
-358/398 (89.94974874%). Data-free coverage was 334/398 (83.91959799%). Coverage is
-package statement coverage, not whole-project or branch coverage. No statements excluded.
+Ruff, formatting, dependency validation, installation, CLI demo and wheel/source
+builds passed. The documented dashboard launcher and synthetic demonstration ran
+locally with a successful HTTP health response. All synthetic demonstration pages
+and exports are covered by application tests. CITATION.cff was schema-validated.
 
-Final staging adds one source-export regression: the latest local full suite passed
-75 cases with zero failures/errors/skips; the data-free selection now has 70 cases.
-The exporter reads committed Git blobs so ZIP bytes/hashes match the staged tree
-even when Windows checkout line endings differ. Earlier 74/69 counts above refer
-to the initial fresh-environment validation. Scientific evaluation code is unchanged.
+Full package statement coverage is 358/398 (89.94974874%); data-free coverage is
+334/398 (83.91959799%). No statements are excluded. These figures do not describe
+whole-project coverage, branch coverage, biological accuracy or clinical validity.
 
-Both scopes passed Ruff, formatting, pip check and wheel/sdist builds. The documented
-software reconstruction and CLI demo ran from the archive. All demonstration pages,
-export interpretation and unknown-label semantics were tested. The actual launcher
-ran on localhost at port 8504; native browser overview and the synthetic-only screenshot
-were inspected. CITATION.cff validates against the official 1.2.0 schema.
+Fresh Python 3.13.12 environments were used for source archives without Git metadata
+or research data. Their provenance records a null commit instead of inheriting an
+unrelated parent checkout. The exporter archives committed Git bytes, so its ZIP
+manifest matches the staged source despite Windows newline conversion.
 
-Primary, TrueOT/training and large-assay inputs downloaded into ignored local folders
-and passed checksum/version verification. The full research workflow regenerated
-primary/tie/external/assay/stress/CCTop results and the report. 20 deterministic
-scientific CSVs match the prior verified analysis; new stress timing varies with load.
-No previous processed table or old test report was supplied as current evidence.
+The final publication preview retained privately binds the exact release commit,
+source-file hashes, archive/package hashes, local reports and actual hosted run.
+The source does not embed a supposed self-referential final commit hash or assume
+that an earlier run covers a later commit. Inspect [Actions](https://github.com/mqar96/BioG-Reliability/actions)
+for the run attached to the exact commit being reviewed. Default CI requires no
+research dataset or configured repository secret and uses read-only contents access.
 
-Local source/test/output receipts are retained privately with the publication preview.
-Research data and generated evidence remain excluded from the public source. The README
-identifies historical performance separately from the current validation repeat.
+Research reconstruction was verified separately with newly acquired, pinned inputs.
+Twenty deterministic scientific CSVs matched the earlier verified analysis. Those
+experiments retain their original source/input/output receipts; a documentation-only
+release update does not turn them into new biological validation. See README for
+historical and repeated performance measurements and their host-load limitations.
 
-Remote CI: private staging at `mqar96/BioG-Reliability` passed
-[run 39477598404](https://github.com/mqar96/BioG-Reliability/actions/runs/39477598404)
-on commit `746a7c1f53fcaf524f9d97c21f722d39861e557e` on 2026-10-20.
-Locked installation, software quality gates, CLI demo, builds, unpacked package tests
-(69 passed/five deselected), and the release scan (66 files/zero findings) passed.
-Inspect Actions for later commits. Public visibility, tags, releases and announcements
-still require separate explicit founder approval.
+The primary benchmark reproduces 20/25 comparisons. Five CCTop discrepancies remain.
+The strict TrueOT cohort contains 911 observations, 93 positives, 15 guides and seven
+studies; incomplete training-data independence limits interpretation. Candidate-row
+counts in assay/stress work are not counts of independently measured observations.
 
-The built source distribution was installed without dependency replacement, unpacked,
-and its own data-free tests executed: 69 passed, five research cases deselected.
-It includes the application, scripts, documentation and synthetic fixtures needed by
-those tests. The wheel is intentionally the reusable package/CLI. Neither distribution
-contains research data, upstream checkouts, environments or sequence-level outputs.
+The source ZIP, wheel and source distribution contain no research data, upstream
+checkouts, environments or sequence-level derived research outputs. The source
+distribution includes the app, scripts, documentation and synthetic fixtures needed
+by its tests; the wheel provides the reusable package/CLI. One earlier local unpacked
+package run emitted a Pytest cache-permission warning while all tests passed; this
+is retained in private historical evidence rather than hidden.
+
+Private staging is authorized. Public visibility, version tags, releases and
+announcements require separate explicit founder approval.

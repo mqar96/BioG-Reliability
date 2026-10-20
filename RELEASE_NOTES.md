@@ -1,38 +1,49 @@
-# v0.1.0 — draft, not published
+# BioG-Reliability v0.1.0 — proposed source-only release
 
-BioG-Reliability evaluates existing CRISPR off-target prediction outputs. It combines
-strict validation, cohort/coverage auditing, classification and ranking metrics,
-exact-budget tie analysis, uncertainty, a CLI and a local Streamlit dashboard.
+Status: prepared for founder review; no public publication or version tag is implied.
 
-This first source release includes a synthetic demonstration and data-free CI.
-Research datasets, sequence-level derived outputs, upstream code, environments,
-research reports/presentation and previous Git history are excluded. Optional
-acquisition requires reviewing original terms and obtaining applicable rights.
+BioG-Reliability evaluates existing CRISPR off-target prediction outputs. It provides
+strict input and provenance checks, cohort/coverage auditing, classification and
+ranking metrics, exact-budget tie analysis, uncertainty estimates, a CLI and a local
+Streamlit dashboard. An explicitly labeled synthetic demonstration runs without
+research datasets. This is not a newly developed biological prediction model.
 
-Historical research findings: 20/25 primary comparisons reproduce; five CCTop
-differences remain. The strict TrueOT cohort contains 911 observations/93 positives/
-15 guides/seven studies, with incomplete training provenance. Engineering tests
-reached one million records; these workloads do not imply biological accuracy.
+The source-only candidate contains 66 reviewed files and independent clean Git
+history. It excludes research datasets, sequence-level derived records, upstream
+checkouts, model weights/executables, research reports/presentation, environments,
+private evidence and the original research Git history. No credentials are required
+for the default demonstration or software CI.
 
-Original code/fixtures are MIT. Other data/dependencies retain their terms.
-Python 3.13 on Windows is the supported target. No new predictor, methodological
-novelty, improved biological accuracy or clinical validation is claimed.
-Private staging at `mqar96/BioG-Reliability` passed hosted software CI on commit
-`746a7c1f53fcaf524f9d97c21f722d39861e557e` (run 39477598404).
-Inspect Actions for subsequent commits. Local validation is reported separately.
-No public release, release date or tag is asserted before publication approval.
+Validation: the full local suite passes 75 tests when external inputs are prepared.
+The data-free selection and packaged source contain 70 passing tests with five
+research tests deselected. A full no-data run passes 70 and explicitly skips five.
+Ruff, formatting, dependency checks, installation, builds and the synthetic CLI demo
+pass. Hosted Windows/Python 3.13.12 checks run against the exact pushed commit; the
+final approval preview identifies that commit, run URL and release-asset hashes.
+See [Actions](https://github.com/mqar96/BioG-Reliability/actions) and
+[validation details](docs/validation-record.md).
 
-Local validation: 74/74 with separately acquired research inputs; 69 data-free tests
-with five research cases explicitly deselected. A full no-data run has 69 passed and
-five documented skips. Ruff, dependency checks and builds pass locally. Hosted CI also
-passed software checks, CLI demo, package tests (69 passed/five deselected), and the
-66-file release scan. Source-archive provenance cannot inherit an unrelated parent Git history.
+Scientific findings and limits:
 
-Packaging verification: the installed/unpacked source distribution passes its 69
-data-free tests; five research tests are explicitly deselected. Application, scripts
-and synthetic fixtures accompany the source distribution. No datasets are bundled.
+- 20/25 published comparisons reproduce; five unresolved CCTop discrepancies remain.
+- The strict external TrueOT cohort contains 911 observations, 93 positives, 15 guides
+  and seven studies. Incomplete training-data independence prevents a claim of fully
+  independent model validation or improved biological prediction accuracy.
+- Engineering tests reached one million records. Runtime and memory are host/load
+  dependent; these workloads are not biological accuracy or measured-sample evidence.
+- No methodological novelty, clinical validation or suitability for clinical decisions
+  is claimed. Unknown or untested outcomes are never treated as measured negatives.
+- Public availability does not establish redistribution rights. Underlying truth,
+  TrueOT/training inputs and derived research records remain excluded; users must
+  establish applicable rights before optional research acquisition.
 
-Final staging adds a regression for committed-byte source exports. The latest full
-local suite passes 75 tests; the data-free selection contains 70 tests. ZIP source
-hashes now match committed Git blobs despite checkout newline conversion. CI actions
-are pinned to reviewed v6 commits using Node.js 24; actual run status remains in Actions.
+Original software and synthetic fixtures are MIT licensed, permitting commercial
+reuse, modification and resale subject to retaining the copyright and permission
+notice. Third-party dependencies, datasets and publications retain their terms.
+The license does not transfer BIOGIANT brand ownership or imply endorsement.
+See [license](LICENSE) and [notices](THIRD_PARTY_NOTICES.md).
+
+Supported release target: Python 3.13 on Windows. Source archives preserve committed
+Git bytes and cannot inherit a parent research checkout's provenance. Optional
+research reproduction requires separately acquired inputs; default software CI
+does not download or require restricted research artifacts.

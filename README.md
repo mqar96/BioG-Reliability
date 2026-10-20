@@ -188,7 +188,9 @@ Default reproduction and checks are data-free:
 Full Pytest explicitly skips research tests when external inputs are absent; CI
 deliberately deselects them. With prepared inputs, all retained research assertions run.
 See [validation record](docs/validation-record.md). Private staging at
-`mqar96/BioG-Reliability` passed its first [hosted software CI run](https://github.com/mqar96/BioG-Reliability/actions/runs/39477598404).
+`mqar96/BioG-Reliability` uses [hosted software CI](https://github.com/mqar96/BioG-Reliability/actions).
+The current suite contains 75 tests: 70 run without research inputs and five require
+separately prepared external inputs. CI deliberately deselects those five research tests.
 Inspect [Actions](https://github.com/mqar96/BioG-Reliability/actions) for the current commit's status. See [contributing](CONTRIBUTING.md)
 and [security](SECURITY.md).
 
@@ -202,6 +204,9 @@ and [security](SECURITY.md).
 
 Use [CITATION.cff](CITATION.cff) and cite original data alongside the software.
 Original source and synthetic fixtures: [MIT](LICENSE). External data/dependencies
-retain their terms: [third-party notices](THIRD_PARTY_NOTICES.md).
+retain their terms: [third-party notices and MIT implications](THIRD_PARTY_NOTICES.md).
+MIT permits commercial reuse of the original software, including modification and
+resale, subject to retaining its copyright and permission notice. It does not clear
+rights to excluded datasets or transfer ownership of the BIOGIANT name.
 Version **0.1.0** is a release candidate; public publication/visibility/release actions
 require explicit approval. See [draft release notes](RELEASE_NOTES.md).
