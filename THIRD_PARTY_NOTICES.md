@@ -39,7 +39,7 @@ establish every primary dataset's redistribution or commercial-use terms.
 
 The current dependency metadata inventory is docs/dependency-licenses.json.
 Certifi declares MPL-2.0. The source export bundles no dependency distributions.
-Existing local Git history includes earlier sequence-level outputs and must not
+The original private research repository history includes earlier sequence-level outputs and must not
 be publicly pushed without rights clearance; use the reviewed source-only export.
 
 ## Original demonstration assets
