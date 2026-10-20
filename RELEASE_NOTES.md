@@ -1,6 +1,8 @@
-# BioG-Reliability v0.1.0 — proposed source-only release
+# BioG-Reliability v0.1.0 — source-only release
 
-Status: prepared for founder review; no public publication or version tag is implied.
+Published **October 20, 2026**. Annotated tag: **v0.1.0**, targeting
+`69662c0f0b6b0df52456ff63c96e318244ba11a3`.
+[Published release and downloads](https://github.com/mqar96/BioG-Reliability/releases/tag/v0.1.0).
 
 BioG-Reliability evaluates existing CRISPR off-target prediction outputs. It provides
 strict input and provenance checks, cohort/coverage auditing, classification and
@@ -8,7 +10,7 @@ ranking metrics, exact-budget tie analysis, uncertainty estimates, a CLI and a l
 Streamlit dashboard. An explicitly labeled synthetic demonstration runs without
 research datasets. This is not a newly developed biological prediction model.
 
-The source-only candidate contains 66 reviewed files and independent clean Git
+The source-only release contains 66 reviewed files and independent clean Git
 history. It excludes research datasets, sequence-level derived records, upstream
 checkouts, model weights/executables, research reports/presentation, environments,
 private evidence and the original research Git history. No credentials are required
@@ -19,7 +21,7 @@ The data-free selection and packaged source contain 70 passing tests with five
 research tests deselected. A full no-data run passes 70 and explicitly skips five.
 Ruff, formatting, dependency checks, installation, builds and the synthetic CLI demo
 pass. Hosted Windows/Python 3.13.12 checks run against the exact pushed commit; the
-final approval preview identifies that commit, run URL and release-asset hashes.
+published release identifies the tagged commit and downloadable asset hashes.
 See [Actions](https://github.com/mqar96/BioG-Reliability/actions) and
 [validation details](docs/validation-record.md).
 
@@ -47,3 +49,6 @@ Supported release target: Python 3.13 on Windows. Source archives preserve commi
 Git bytes and cannot inherit a parent research checkout's provenance. Optional
 research reproduction requires separately acquired inputs; default software CI
 does not download or require restricted research artifacts.
+
+Post-publication documentation corrections on main do not alter the v0.1.0 tag,
+tagged source, original scientific results or published downloadable assets.

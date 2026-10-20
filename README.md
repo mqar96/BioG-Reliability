@@ -1,5 +1,7 @@
 # BioG-Reliability v0.1.0
 
+Published **October 20, 2026**: [v0.1.0 release](https://github.com/mqar96/BioG-Reliability/releases/tag/v0.1.0).
+
 **BIOGIANT THERAPEUTICS** — Reproducible evaluation of precomputed CRISPR off-target scores.
 
 Candidate nomination, detection limits, missing scores, identity rules and ranking ties
@@ -12,8 +14,8 @@ prediction accuracy or certify clinical safety. No methodological novelty is cla
 ## Install and demonstrate without research data
 
 Supported target: Windows 11, Python 3.13.x and Git; tested with Python 3.13.12.
-Other platforms remain unverified. Unpack the reviewed source archive, or clone after
-approved publication. From the source root in PowerShell:
+Other platforms remain unverified. Unpack the published source archive, or clone the
+public repository. From the source root in PowerShell:
 
 ~~~powershell
 .\scripts\setup.ps1
@@ -187,7 +189,7 @@ Default reproduction and checks are data-free:
 
 Full Pytest explicitly skips research tests when external inputs are absent; CI
 deliberately deselects them. With prepared inputs, all retained research assertions run.
-See [validation record](docs/validation-record.md). Private staging at
+See [validation record](docs/validation-record.md). The public repository at
 `mqar96/BioG-Reliability` uses [hosted software CI](https://github.com/mqar96/BioG-Reliability/actions).
 The current suite contains 75 tests: 70 run without research inputs and five require
 separately prepared external inputs. CI deliberately deselects those five research tests.
@@ -208,5 +210,6 @@ retain their terms: [third-party notices and MIT implications](THIRD_PARTY_NOTIC
 MIT permits commercial reuse of the original software, including modification and
 resale, subject to retaining its copyright and permission notice. It does not clear
 rights to excluded datasets or transfer ownership of the BIOGIANT name.
-Version **0.1.0** is a release candidate; public publication/visibility/release actions
-require explicit approval. See [draft release notes](RELEASE_NOTES.md).
+Version **0.1.0** was published on **October 20, 2026**. See [release notes](RELEASE_NOTES.md)
+and the [published release](https://github.com/mqar96/BioG-Reliability/releases/tag/v0.1.0).
+Documentation updates on main do not change the v0.1.0 tag or its downloadable assets.
