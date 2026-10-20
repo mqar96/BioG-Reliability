@@ -36,6 +36,8 @@ def main(check_only=False):
         data = path.read_bytes()
         if len(data) > 5_000_000:
             findings.append({"path": name, "reason": "file larger than 5 MB"})
+        if path.suffix == ".csv" and not name.startswith("examples/demo/"):
+            findings.append({"path": name, "reason": "unreviewed tabular data"})
         if path.suffix == ".png":
             if name != "docs/assets/demo-dashboard.png":
                 findings.append({"path": name, "reason": "unreviewed binary"})
@@ -58,7 +60,7 @@ def main(check_only=False):
     report = {
         "files": records,
         "findings": findings,
-        "scope": "Tracked files only; bounded pattern/format scan with separate human licensing review.",
+        "scope": "Tracked files only; bounded scan plus separate human license review.",
     }
     (output / "file-review.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     if findings:

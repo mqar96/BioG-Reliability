@@ -15,6 +15,7 @@ from biog_reliability.reporting import sha256, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
 MD5 = "611cb28ab0516e471c5dc59ea44a330a"
+SHA256 = "42c1b1c71c77494b3ab3a4cf5a3e54c500bf2eb2985a53c76a41dc08c3e6cda9"
 URL = "https://zenodo.org/api/records/20627722/files/offtarget_prediction_benchmark_zenodo_artifacts_v1.zip/content"
 
 
@@ -57,7 +58,7 @@ def main():
                     stream.write(chunk)
         partial.replace(archive)
     digest = hashlib.file_digest(archive.open("rb"), "md5").hexdigest()
-    if digest != MD5:
+    if digest != MD5 or sha256(archive) != SHA256:
         raise ValueError("Archive checksum mismatch")
     destination = (raw / "zenodo").resolve()
     destination.mkdir(exist_ok=True)

@@ -1,6 +1,6 @@
 # BioG-Reliability v0.1.0
 
-**BIOGIANT THERAPEUTICS** — Reproducible evaluation of precomputed CRISPR off-target scores.
+**BIOGIANT THERAPEUTICS** â€” Reproducible evaluation of precomputed CRISPR off-target scores.
 
 Candidate nomination, detection limits, missing scores, identity rules and ranking ties
 can change benchmark results. BioG-Reliability compares existing predictions with
@@ -20,7 +20,7 @@ approved publication. From the source root in PowerShell:
 .\scripts\launch.ps1
 ~~~
 
-Open **http://127.0.0.1:8501**. The server binds to localhost. A clean checkout defaults
+Open **http://127.0.0.1:8501**. The server binds to localhost. If port 8501 is occupied, use scripts/launch.ps1 -Port 8503. A clean checkout defaults
 to **Synthetic demonstration**: five artificial site IDs and two artificial score sets.
 No biological sequences or observations are bundled. A persistent warning and export
 metadata identify the synthetic inputs. These scores support no biological accuracy claim.
@@ -93,13 +93,13 @@ remain discrepant** with the stored reference. Pinned upstream-function executio
 agrees with BioG's CCTop values; historical reference lineage remains unresolved.
 
 At K=50, CRISPert macro recall is **0.6913048985149298**, micro recovery
-**59/114 = 0.5175438596491229**. CCTop rank<=50 admits **72–330 candidates per guide**.
+**59/114 = 0.5175438596491229**. CCTop rank<=50 admits **72â€“330 candidates per guide**.
 Exact-budget expected macro recall is **0.5069566368346782**, versus inclusive-rank
-recall **0.5828298660587062**. Tie-order bounds **0.454842–0.582830** assume uniform
+recall **0.5828298660587062**. Tie-order bounds **0.454842â€“0.582830** assume uniform
 boundary-tie ordering and are not confidence intervals.
 
 The common scored cohort has 395 sites/67 positives. CRISPert AP is 0.7009677411071481;
-guide-bootstrap 95% interval **[0.457796, 0.864610]**. The paired CRISPert–MOFF recall@50
+guide-bootstrap 95% interval **[0.457796, 0.864610]**. The paired CRISPertâ€“MOFF recall@50
 interval includes zero. These findings do not establish superiority.
 
 ### External retrospective evaluation
@@ -131,12 +131,12 @@ duplicates/dependence. These engineering workloads imply no biological accuracy.
 
 | Rows | Wall seconds | Peak process-tree RSS, MiB |
 |---:|---|---|
-| 10,000 | 1.770–1.773 | 177.020–177.066 |
-| 100,000 | 2.778–2.991 | 262.086–265.566 |
-| 1,000,000 | 13.719–14.046 | 1,139.828–1,140.020 |
+| 10,000 | 1.770â€“1.773 | 177.020â€“177.066 |
+| 100,000 | 2.778â€“2.991 | 262.086â€“265.566 |
+| 1,000,000 | 13.719â€“14.046 | 1,139.828â€“1,140.020 |
 
-The million-row CSV is 248,130,942 bytes. Ingestion reached approximately 379k–387k
-rows/second; processing 148k–151k rows/second. All six workers recovered from invalid
+The million-row CSV is 248,130,942 bytes. Ingestion reached approximately 379kâ€“387k
+rows/second; processing 148kâ€“151k rows/second. All six workers recovered from invalid
 provenance before valid processing. The Windows host had 24 logical CPUs and about
 31.44 GiB RAM; sampling was every 20 ms, with caches unflushed. Times include startup/
 recovery and exclude fixture assembly. They are historical measurements, not hardware-
