@@ -1,6 +1,7 @@
 """Inspect every tracked distribution file and export only a reviewed clean Git tree."""
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -28,7 +29,10 @@ def main(check_only=False):
     if Path(top).resolve() != ROOT.resolve():
         raise SystemExit("Release export requires its own project-root Git repository")
     paths = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
-    records, findings = [], []
+    if not check_only:
+        if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip():
+            raise SystemExit("Commit the reviewed source before exporting")
+    records, findings, payloads = [], [], {}
     for name in filter(None, paths):
         path = ROOT / name
         if (
@@ -42,7 +46,12 @@ def main(check_only=False):
             p.endswith(".egg-info") for p in Path(name).parts
         ):
             findings.append({"path": name, "reason": "excluded research/build content"})
-        data = path.read_bytes()
+        data = (
+            path.read_bytes()
+            if check_only
+            else subprocess.check_output(["git", "show", f"HEAD:{name}"], cwd=ROOT)
+        )
+        payloads[name] = data
         if len(data) > 5_000_000:
             findings.append({"path": name, "reason": "file larger than 5 MB"})
         if path.suffix == ".csv" and not name.startswith("examples/demo/"):
@@ -62,7 +71,12 @@ def main(check_only=False):
             if name.startswith("examples/demo/"):
                 category = "original synthetic software fixture; MIT"
         records.append(
-            {"path": name, "bytes": len(data), "sha256": sha256(path), "review_category": category}
+            {
+                "path": name,
+                "bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest(),
+                "review_category": category,
+            }
         )
     output = ROOT / "work/release"
     output.mkdir(parents=True, exist_ok=True)
@@ -75,12 +89,10 @@ def main(check_only=False):
     if findings:
         raise SystemExit("Distribution review found blockers; see work/release/file-review.json")
     if not check_only:
-        if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip():
-            raise SystemExit("Commit the reviewed source before exporting")
         archive = output / "BioG-Reliability-v0.1.0-source.zip"
         with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as bundle:
             for record in records:
-                bundle.write(ROOT / record["path"], record["path"])
+                bundle.writestr(record["path"], payloads[record["path"]])
         report.update(
             archive_sha256=sha256(archive),
             commit=subprocess.check_output(

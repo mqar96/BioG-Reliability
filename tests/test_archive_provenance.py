@@ -1,7 +1,11 @@
 """Archive executions must never claim a parent repository's commit."""
 
+import hashlib
+import importlib.util
+import json
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 from biog_reliability.provenance import run_context
@@ -56,3 +60,40 @@ def test_release_export_rejects_parent_checkout(tmp_path):
     assert result.returncode != 0
     assert "own project-root Git repository" in result.stderr
     assert not (tmp_path / "archive/work/release").exists()
+
+
+def test_release_export_uses_committed_bytes(tmp_path, monkeypatch):
+    """Git newline conversion must not change a source archive's committed bytes."""
+
+    def git(*args):
+        return subprocess.run(["git", "-C", str(tmp_path), *args], check=True, capture_output=True)
+
+    git("init")
+    git("config", "core.autocrlf", "true")
+    (tmp_path / ".gitattributes").write_bytes(b"README.md text eol=crlf\n")
+    (tmp_path / "README.md").write_bytes(b"fixture\n")
+    git("add", ".gitattributes", "README.md")
+    git(
+        "-c",
+        "user.name=Fixture",
+        "-c",
+        "user.email=fixture@example.invalid",
+        "commit",
+        "-m",
+        "Fixture",
+    )
+    (tmp_path / "README.md").write_bytes(b"fixture\r\n")
+    git("add", "README.md")
+    assert not git("status", "--porcelain").stdout.strip()
+    source = Path(__file__).resolve().parents[1] / "scripts/check_release.py"
+    spec = importlib.util.spec_from_file_location("release_export_fixture", source)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    module.main()
+    output = tmp_path / "work/release"
+    with zipfile.ZipFile(output / "BioG-Reliability-v0.1.0-source.zip") as archive:
+        assert archive.read("README.md") == b"fixture\n"
+    receipt = json.loads((output / "export-receipt.json").read_text())
+    record = next(f for f in receipt["files"] if f["path"] == "README.md")
+    assert record["sha256"] == hashlib.sha256(b"fixture\n").hexdigest()

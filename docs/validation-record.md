@@ -14,6 +14,12 @@ The final full research suite passed all 74 cases. Package statement coverage wa
 358/398 (89.94974874%). Data-free coverage was 334/398 (83.91959799%). Coverage is
 package statement coverage, not whole-project or branch coverage. No statements excluded.
 
+Final staging adds one source-export regression: the latest local full suite passed
+75 cases with zero failures/errors/skips; the data-free selection now has 70 cases.
+The exporter reads committed Git blobs so ZIP bytes/hashes match the staged tree
+even when Windows checkout line endings differ. The regression verifies this case.
+Earlier 74/69 counts above identify the historical fresh-environment validation.
+
 Both scopes passed Ruff, formatting, pip check and wheel/sdist builds. The documented
 software reconstruction and CLI demo ran from the archive. All demonstration pages,
 export interpretation and unknown-label semantics were tested. The actual launcher

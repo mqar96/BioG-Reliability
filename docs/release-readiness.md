@@ -15,6 +15,9 @@ generated egg-info, oversized/unreviewed binaries, common credential patterns,
 workstation paths and literal long DNA sequences. It exports a clean committed tree
 with per-file hashes. This bounded scan complements human review and is not legal clearance.
 
+The ZIP is built from committed Git blobs, not checkout bytes. Windows newline
+conversion cannot change the archived source or its manifest hashes.
+
 Original code/fixtures are MIT; dependencies and external data retain their terms.
 Nothing third-party is vendored. See THIRD_PARTY_NOTICES.md and dependency-licenses.json.
 

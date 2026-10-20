@@ -31,3 +31,8 @@ passed software checks, CLI demo, package tests (69 passed/five deselected), and
 Packaging verification: the installed/unpacked source distribution passes its 69
 data-free tests; five research tests are explicitly deselected. Application, scripts
 and synthetic fixtures accompany the source distribution. No datasets are bundled.
+
+Final staging adds a regression for committed-byte source exports. The latest full
+local suite passes 75 tests; the data-free selection contains 70 tests. ZIP source
+hashes now match committed Git blobs despite checkout newline conversion. CI actions
+are pinned to reviewed v6 commits using Node.js 24; actual run status remains in Actions.
