@@ -20,7 +20,7 @@ from biog_reliability.validation import (
 )
 
 ROOT = Path(__file__).resolve().parent
-st.set_page_config(page_title="BioG-Reliability", page_icon="ðŸ§¬", layout="wide")
+st.set_page_config(page_title="BioG-Reliability", page_icon="🧬", layout="wide")
 st.markdown(
     """<style>
 .stApp {background:#081624;color:#e9f3fa}
@@ -110,7 +110,7 @@ else:
         st.stop()
 
 st.title("BioG-Reliability")
-st.caption("CRISPR off-target benchmarking Â· evidence, coverage and reproducibility")
+st.caption("CRISPR off-target benchmarking · evidence, coverage and reproducibility")
 if mode == "Synthetic demonstration":
     st.warning(
         "SYNTHETIC SOFTWARE DEMONSTRATION: artificial labels and scores. "
@@ -118,7 +118,7 @@ if mode == "Synthetic demonstration":
     )
 if mode == "Public benchmark":
     st.caption(
-        "Kaufmann et al. 2026 Â· hg38 / human SpCas9 Â· length-23 cohort Â· 0.1% indel threshold"
+        "Kaufmann et al. 2026 · hg38 / human SpCas9 · length-23 cohort · 0.1% indel threshold"
     )
 models = st.sidebar.multiselect(
     "Models", sorted(predictions.model.unique()), default=sorted(predictions.model.unique())
