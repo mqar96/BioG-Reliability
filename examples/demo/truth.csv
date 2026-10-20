@@ -1,0 +1,6 @@
+site_id,guide_id,assembly,assay,context,status,measurement
+demo-a,demo-guide-1,synthetic,synthetic,demonstration,positive,1.0
+demo-b,demo-guide-1,synthetic,synthetic,demonstration,measured_negative,0.0
+demo-c,demo-guide-2,synthetic,synthetic,demonstration,positive,0.5
+demo-d,demo-guide-2,synthetic,synthetic,demonstration,measured_negative,0.0
+demo-unknown,demo-guide-1,synthetic,synthetic,demonstration,untested,

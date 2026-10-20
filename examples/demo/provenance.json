@@ -1,0 +1,12 @@
+{
+  "dataset_id": "synthetic_software_demonstration",
+  "version": "1",
+  "source_url": "https://example.org/biog-synthetic-demo",
+  "license": "MIT; original synthetic fixture; source URL is a reserved example placeholder",
+  "assembly": "synthetic",
+  "species": "synthetic",
+  "nuclease": "synthetic",
+  "assay": "synthetic",
+  "context": "demonstration",
+  "identity_policy": "explicit artificial site IDs; no biological sequences or observations"
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biog-reliability"
+version = "0.1.0"
+description = "Auditable evaluation of precomputed CRISPR off-target predictions"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+license = "MIT"
+authors = [{name = "BIOGIANT THERAPEUTICS"}]
+dependencies = ["numpy>=2", "pandas>=2.2", "scikit-learn>=1.5", "streamlit>=1.40", "plotly>=5.24", "requests>=2.32"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "build", "pip-tools", "matplotlib", "pyyaml", "psutil", "openpyxl"]
+
+[project.scripts]
+biog = "biog_reliability.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["realdata: requires downloaded public benchmark data"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = ["research/upstream", "work", "data", ".venv", "presentation"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# Research prose and HTML/CSS templates retain readable paragraph boundaries.
+"scripts/generate_report.py" = ["E501"]

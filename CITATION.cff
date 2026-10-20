@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: Please cite this software and the original benchmark and datasets.
+title: BioG-Reliability
+version: 0.1.0
+type: software
+authors:
+  - name: BIOGIANT THERAPEUTICS
+license: MIT
+repository-code: https://github.com/BioGiantTherapeutics/BioG-Reliability
+abstract: Research software for reproducible evaluation of precomputed CRISPR off-target scores.
+references:
+  - type: article
+    title: Systematic Benchmarking of CRISPR-Cas9 Off-Target Prediction Tools Reveals Limitations and Implications for Preclinical Assessment
+    doi: 10.1177/10430342261466407
+    authors:
+      - family-names: Kaufmann
+        given-names: Masako M.
+  - type: data
+    title: Standardized prediction outputs for reproducible benchmarking of CRISPR-Cas9 off-target prediction tools
+    doi: 10.5281/zenodo.20627722
+    authors:
+      - family-names: Kaufmann
+        given-names: Masako Monika
