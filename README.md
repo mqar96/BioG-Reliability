@@ -142,6 +142,13 @@ provenance before valid processing. The Windows host had 24 logical CPUs and abo
 recovery and exclude fixture assembly. They are historical measurements, not hardware-
 independent guarantees, concurrency tests or long-term memory-leak tests.
 
+
+A separate release-source reconstruction repeated these findings. During that run,
+concurrent installation of a second environment coincided with million-row wall times
+of **20.190–20.577 seconds** and peak RSS **1,140.434–1,140.625 MiB**. Both runs succeeded;
+this illustrates load sensitivity. Both measurement sets are retained in the aggregate
+summary rather than treating the fastest observation as a general speed claim.
+
 ## Reproducibility and data rights
 
 The source release contains **no research dataset, sequence-level derived output,

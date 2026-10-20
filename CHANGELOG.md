@@ -8,3 +8,5 @@
 - Data-free default CI, hash lock and wheel/sdist verification.
 - Fresh source-only Git history and tracked-file security inventory.
 Known limitations and publication gates are documented in README and notices.
+
+- Source ZIPs work without Git metadata; exports require their own project Git root.

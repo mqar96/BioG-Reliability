@@ -18,3 +18,8 @@ Python 3.13 on Windows is the supported target. No new predictor, methodological
 novelty, improved biological accuracy or clinical validation is claimed.
 Remote CI awaits staging authorization. Local validation is reported separately.
 No public release, release date or tag is asserted before publication approval.
+
+Local validation: 74/74 with separately acquired research inputs; 69 data-free tests
+with five research cases explicitly deselected. A full no-data run has 69 passed and
+five documented skips. Ruff, dependency checks and builds pass locally. Remote CI
+has not run. Source-archive provenance cannot inherit an unrelated parent Git history.
