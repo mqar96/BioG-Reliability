@@ -187,8 +187,9 @@ Default reproduction and checks are data-free:
 
 Full Pytest explicitly skips research tests when external inputs are absent; CI
 deliberately deselects them. With prepared inputs, all retained research assertions run.
-See [validation record](docs/validation-record.md). Private staging is authorized at
-`mqar96/BioG-Reliability`; remote CI remains pending and no passing badge is asserted. See [contributing](CONTRIBUTING.md)
+See [validation record](docs/validation-record.md). Private staging at
+`mqar96/BioG-Reliability` passed its first [hosted software CI run](https://github.com/mqar96/BioG-Reliability/actions/runs/39477598404).
+Inspect [Actions](https://github.com/mqar96/BioG-Reliability/actions) for the current commit's status. See [contributing](CONTRIBUTING.md)
 and [security](SECURITY.md).
 
 ## References and citation

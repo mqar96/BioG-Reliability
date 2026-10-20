@@ -17,14 +17,16 @@ reached one million records; these workloads do not imply biological accuracy.
 Original code/fixtures are MIT. Other data/dependencies retain their terms.
 Python 3.13 on Windows is the supported target. No new predictor, methodological
 novelty, improved biological accuracy or clinical validation is claimed.
-Private staging is authorized at `mqar96/BioG-Reliability`; remote CI remains pending.
-Local validation is reported separately.
+Private staging at `mqar96/BioG-Reliability` passed hosted software CI on commit
+`746a7c1f53fcaf524f9d97c21f722d39861e557e` (run 39477598404).
+Inspect Actions for subsequent commits. Local validation is reported separately.
 No public release, release date or tag is asserted before publication approval.
 
 Local validation: 74/74 with separately acquired research inputs; 69 data-free tests
 with five research cases explicitly deselected. A full no-data run has 69 passed and
-five documented skips. Ruff, dependency checks and builds pass locally. Remote CI
-has not run. Source-archive provenance cannot inherit an unrelated parent Git history.
+five documented skips. Ruff, dependency checks and builds pass locally. Hosted CI also
+passed software checks, CLI demo, package tests (69 passed/five deselected), and the
+66-file release scan. Source-archive provenance cannot inherit an unrelated parent Git history.
 
 Packaging verification: the installed/unpacked source distribution passes its 69
 data-free tests; five research tests are explicitly deselected. Application, scripts

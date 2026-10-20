@@ -1,8 +1,9 @@
 # Source-only release boundary
 
-Proposed repository: BioGiantTherapeutics/BioG-Reliability. The local candidate has a
+Private staging repository: mqar96/BioG-Reliability. The candidate has a
 fresh Git root derived from a reviewed source ZIP, with no old parents, alternates,
-copied .git directory or remote. Never push the research repository history.
+copied .git directory or connection to the original research history. Its origin
+is the approved private staging repository. Never push the research repository history.
 
 Include original source, research scripts, tests, dependency locks, CI, documentation,
 original synthetic fixtures and a screenshot of only that synthetic demonstration.
@@ -17,6 +18,8 @@ with per-file hashes. This bounded scan complements human review and is not lega
 Original code/fixtures are MIT; dependencies and external data retain their terms.
 Nothing third-party is vendored. See THIRD_PARTY_NOTICES.md and dependency-licenses.json.
 
-Gates: review owner/source inventory; authorize private staging creation/push; run
-and inspect remote CI; obtain separate explicit approval for public visibility/tag/release.
-Local preparation creates no remote resource, release tag or announcement.
+Owner/source review and private staging creation/push were authorized and completed.
+The first hosted software CI run passed; inspect Actions for the current commit.
+The remaining publication gate is separate explicit approval for the exact public
+commit, assets, visibility change, tag and release. No public release or announcement
+is authorized by private staging approval. Research-data rights remain separate.

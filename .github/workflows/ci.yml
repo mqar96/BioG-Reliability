@@ -18,6 +18,9 @@ jobs:
       - run: python -m pip install --require-hashes -r requirements.lock
       - run: python -m pip install --no-build-isolation --no-deps -e .
       - run: python scripts/verify.py --software-only
+      - name: Report software test evidence
+        run: |
+          python -c "import json,xml.etree.ElementTree as E; r=E.parse('results/test-results.xml').getroot(); print('JUnit suites:',json.dumps([s.attrib for s in r.iter('testsuite')],sort_keys=True)); print('Package statement coverage:',json.dumps(json.load(open('results/coverage.json'))['totals'],sort_keys=True))"
       - run: python -m biog_reliability.cli examples/demo/truth.csv examples/demo/predictions.csv examples/demo/provenance.json --output work/demo
       - name: Verify packaged source independently
         run: |

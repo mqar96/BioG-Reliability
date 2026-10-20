@@ -30,10 +30,16 @@ Local source/test/output receipts are retained privately with the publication pr
 Research data and generated evidence remain excluded from the public source. The README
 identifies historical performance separately from the current validation repeat.
 
-Remote CI: NOT RUN. The founder authorized private staging at
-`mqar96/BioG-Reliability` on 2026-10-20, and the empty private repository was created
-and its private visibility verified in GitHub. Source upload and CI are pending.
-Public visibility, release tags and releases still require separate explicit approval.
+Remote CI: [run 39477598404](https://github.com/mqar96/BioG-Reliability/actions/runs/39477598404)
+passed on commit `746a7c1f53fcaf524f9d97c21f722d39861e557e` on 2026-10-20.
+The hosted Windows/Python 3.13.12 runner passed locked dependency installation,
+editable installation, Ruff, formatting, pip check, data-free Pytest, builds,
+the CLI demo, unpacked source distribution tests (69 passed/five deselected),
+and the 66-file release scan (zero findings). The job took 3m 9s.
+Private staging was explicitly authorized; a fresh clone has the same source tree
+and independent root as the clean candidate. Original research objects are absent.
+Inspect Actions for subsequent commits. Public visibility, tags and releases
+still require separate explicit approval.
 
 The built source distribution was installed without dependency replacement, unpacked,
 and its own data-free tests executed: 69 passed, five research cases deselected.
