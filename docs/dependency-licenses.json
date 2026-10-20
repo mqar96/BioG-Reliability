@@ -24,14 +24,6 @@
     ]
   },
   {
-    "package": "biog-reliability",
-    "version": "0.1.0",
-    "license_declaration": "MIT",
-    "license_files": [
-      "biog_reliability-0.1.0.dist-info/licenses/LICENSE"
-    ]
-  },
-  {
     "package": "build",
     "version": "1.6.1",
     "license_declaration": "MIT",
@@ -628,11 +620,5 @@
     "license_files": [
       "wheel-0.48.0.dist-info/licenses/LICENSE.txt"
     ]
-  },
-  {
-    "package": "biog-reliability",
-    "version": "0.1.0",
-    "license_declaration": "MIT",
-    "license_files": []
   }
 ]
