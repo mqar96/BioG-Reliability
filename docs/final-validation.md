@@ -10,7 +10,7 @@ Its provenance records a null commit rather than inheriting the parent research 
 | Full suite without external inputs | 69 | 0 | 5 | 0 |
 | Full suite with freshly acquired research inputs | 74 | 0 | 0 | 0 |
 
-The final full research suite took 55.37 seconds. Package statement coverage was
+The final full research suite passed all 74 cases. Package statement coverage was
 358/398 (89.94974874%). Data-free coverage was 334/398 (83.91959799%). Coverage is
 package statement coverage, not whole-project or branch coverage. No statements excluded.
 
@@ -32,3 +32,9 @@ identifies historical performance separately from the current validation repeat.
 
 Remote CI: NOT RUN. No private staging repository, public repository, visibility change,
 release tag or release has been created. Those require the founder's explicit authorization.
+
+The built source distribution was installed without dependency replacement, unpacked,
+and its own data-free tests executed: 69 passed, five research cases deselected.
+It includes the application, scripts, documentation and synthetic fixtures needed by
+those tests. The wheel is intentionally the reusable package/CLI. Neither distribution
+contains research data, upstream checkouts, environments or sequence-level outputs.

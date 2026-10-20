@@ -24,3 +24,7 @@ Local validation: 74/74 with separately acquired research inputs; 69 data-free t
 with five research cases explicitly deselected. A full no-data run has 69 passed and
 five documented skips. Ruff, dependency checks and builds pass locally. Remote CI
 has not run. Source-archive provenance cannot inherit an unrelated parent Git history.
+
+Packaging verification: the installed/unpacked source distribution passes its 69
+data-free tests; five research tests are explicitly deselected. Application, scripts
+and synthetic fixtures accompany the source distribution. No datasets are bundled.

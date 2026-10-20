@@ -12,3 +12,4 @@
 Known limitations and publication gates are documented in README and notices.
 
 - Source ZIPs work without Git metadata; exports require their own project Git root.
+- Complete source-distribution contents and unpacked-package tests in default CI.
