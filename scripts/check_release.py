@@ -22,11 +22,20 @@ PATTERNS = {
 
 
 def main(check_only=False):
+    top = subprocess.check_output(
+        ["git", "rev-parse", "--show-toplevel"], cwd=ROOT, text=True
+    ).strip()
+    if Path(top).resolve() != ROOT.resolve():
+        raise SystemExit("Release export requires its own project-root Git repository")
     paths = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
     records, findings = [], []
     for name in filter(None, paths):
         path = ROOT / name
-        if not path.is_file() or path.is_symlink():
+        if (
+            not path.resolve().is_relative_to(ROOT.resolve())
+            or not path.is_file()
+            or path.is_symlink()
+        ):
             findings.append({"path": name, "reason": "missing file or symbolic link"})
             continue
         if Path(name).parts[0] in FORBIDDEN or any(
