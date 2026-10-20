@@ -43,6 +43,6 @@ The original private research repository history includes earlier sequence-level
 be publicly pushed without rights clearance; use the reviewed source-only export.
 
 ## Original demonstration assets
-examples/demo and docs/assets/demo-dashboard.png are original synthetic software fixtures
+examples/demo and docs/assets/demo-dashboard.jpg are original synthetic software fixtures
 and an authentic screenshot of those fixtures. No biological sequences or observations
 are represented. They are distributed under the project MIT license.

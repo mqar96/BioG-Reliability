@@ -25,7 +25,7 @@ to **Synthetic demonstration**: five artificial site IDs and two artificial scor
 No biological sequences or observations are bundled. A persistent warning and export
 metadata identify the synthetic inputs. These scores support no biological accuracy claim.
 
-![Synthetic demonstration, containing no biological observations](docs/assets/demo-dashboard.png)
+![Synthetic demonstration, containing no biological observations](docs/assets/demo-dashboard.jpg)
 
 Visit Overview, Model comparison, Sensitivity, Data audit and Export. Select Import CSV
 files to use your own authorized data. Public benchmark mode requires optional external

@@ -47,8 +47,8 @@ def main(check_only=False):
             findings.append({"path": name, "reason": "file larger than 5 MB"})
         if path.suffix == ".csv" and not name.startswith("examples/demo/"):
             findings.append({"path": name, "reason": "unreviewed tabular data"})
-        if path.suffix == ".png":
-            if name != "docs/assets/demo-dashboard.png":
+        if path.suffix == ".jpg":
+            if name != "docs/assets/demo-dashboard.jpg":
                 findings.append({"path": name, "reason": "unreviewed binary"})
             category = "synthetic demo screenshot; no research records"
         else:
